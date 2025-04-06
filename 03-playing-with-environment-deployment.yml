@@ -21,7 +21,7 @@ stages:
 
 - stage: DevDeploy
   jobs:    
-  - deployment: DevDeployJob
+  - deployment: QADeployJob
     environment: Dev
     strategy:
       runOnce:
@@ -31,7 +31,7 @@ stages:
 
 - stage: QADeploy
   jobs:    
-  - deployment: QADeployJob
+  - deployment: DevDeployJob
     environment: QA
     strategy:
       runOnce:
@@ -39,8 +39,6 @@ stages:
          steps:
            - script: echo deploy to QA  
 
-steps:
-- script: echo on the $(operatingSystem)
-  displayName: 'Run a one-line script'
+
 
 
