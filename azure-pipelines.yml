@@ -19,7 +19,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'in28min-docker-hub'
-        repository: 'pvdatla/currency-exchange-devops'
+        repository: 'pradeepregistry/currency-exchange-devops'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
