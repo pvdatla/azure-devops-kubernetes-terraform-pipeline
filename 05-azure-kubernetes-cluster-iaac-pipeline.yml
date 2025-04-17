@@ -23,6 +23,7 @@ steps:
     backendAzureRmTenantId: '14e04911-8d5d-401f-af81-15a05d9b37f6'
     backendAzureRmSubscriptionId: '228d1ba2-87e8-4750-b611-347ecc3fa3f6'
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
+    backendAzureRmResourceGroupLocation: 'westeurope'
     backendAzureRmStorageAccountName: 'storageacctpradeepxyz'
     backendAzureRmContainerName: 'storageacctpradeepcontainer'
     backendAzureRmKey: 'Kubernetes-dev.tfstate'
