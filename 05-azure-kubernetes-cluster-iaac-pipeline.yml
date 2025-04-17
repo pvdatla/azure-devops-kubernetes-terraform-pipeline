@@ -7,14 +7,13 @@ pool:
 steps:
 - script: echo K8S Terraform Azure!
   displayName: 'Run a one-line script'
-- script: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh  
-  displayName: 'Run a two-line script'
+
 - task: DownloadSecureFile@1
   name: publickey 
   inputs:
     secureFile: 'azure_rsa.pub'
     retryCount: '5'
-- task: TerraformCLI@1
+- task: TerraformCLI@0
   inputs:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
