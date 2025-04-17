@@ -13,7 +13,7 @@ steps:
   inputs:
     secureFile: 'azure_rsa.pub'
     retryCount: '5'
-- task: TerraformCLI@0
+- task: TerraformCLI@1
   inputs:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
