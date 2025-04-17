@@ -15,7 +15,7 @@ steps:
     retryCount: '5'
 - task: TerraformCLI@0
   inputs:
-    command: 'init'
+    command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_pub_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
