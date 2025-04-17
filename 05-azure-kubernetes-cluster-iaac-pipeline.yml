@@ -1,0 +1,41 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo K8S Terraform Azure!
+  displayName: 'Run a one-line script'
+- task: DownloadSecureFile@1
+  name: publickey
+  inputs:
+    secureFile: 'azure_rsa.pub'
+    retryCount: '5'
+- task: TerraformCLI@2
+  inputs:
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+    - task: TerraformCLI@2
+      inputs:
+        command: 'init'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+        commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+        backendType: 'azurerm'
+        backendServiceArm: 'azure-resource-manager'
+        backendAzureRmTenantId: '14e04911-8d5d-401f-af81-15a05d9b37f6'
+        backendAzureRmSubscriptionId: '228d1ba2-87e8-4750-b611-347ecc3fa3f6'
+        backendAzureRmResourceGroupName: 'terraform-backend-rg'
+        backendAzureRmStorageAccountName: 'storageacctpradeepxyz'
+        backendAzureRmContainerName: 'storageacctpradeepcontainer'
+        backendAzureRmKey: 'Kubernetes-dev.tfstate'
+        allowTelemetryCollection: true
+        backendType: 'azurerm'
+        backendServiceArm: 'azure-resource-manager'
+        backendAzureRmTenantId: '14e04911-8d5d-401f-af81-15a05d9b37f6'
+        backendAzureRmSubscriptionId: '228d1ba2-87e8-4750-b611-347ecc3fa3f6'
+        backendAzureRmResourceGroupName: 'terraform-backend-rg'
+        backendAzureRmStorageAccountName: 'storageacctpradeepxyz'
+        backendAzureRmContainerName: 'storageacctpradeepcontainer'
+        backendAzureRmKey: 'Kubernetes-dev.tfstate'
+        allowTelemetryCollection: true
