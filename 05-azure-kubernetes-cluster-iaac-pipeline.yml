@@ -16,8 +16,7 @@ steps:
 - task: TerraformCLI@2
   inputs:
     command: 'init'
-    # workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    workingDirectory: 'pvdatla/azure-devops-kubernetes-terraform-pipeline/configuration/iaac/azure/kubernetes'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_pub_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
     backendServiceArm: 'azure-resource-manager-service-connection'
