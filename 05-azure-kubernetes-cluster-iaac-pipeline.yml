@@ -18,9 +18,9 @@ steps:
 - task: TerraformInstaller@0
   displayName: 'Install Terraform'
   inputs:
-    terraformVersion: '1.5.7'  # or any version you need
-  name: TerraformInstaller
-- task: TerraformCLI@2
+    terraformVersion: '0.7.11'  # or any version you need
+ 
+- task: TerraformCLI@0
   inputs:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
