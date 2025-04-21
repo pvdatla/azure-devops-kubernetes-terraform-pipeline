@@ -7,7 +7,10 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- task: TerraformInstaller@1
+  displayName: 'Install Terraform'
+  inputs:
+    terraformVersion: '1.11.3'  # or any version you need
 - task: TerraformTaskV4@4
   inputs:
     provider: 'aws'
