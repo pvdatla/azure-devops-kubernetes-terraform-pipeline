@@ -8,7 +8,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- task: TerraformTaskV1@0
+- task: TerraformTaskV4@4
   inputs:
     provider: 'aws'
     command: 'init'
@@ -16,5 +16,6 @@ steps:
     backendServiceAWS: 'aws-for-terraform'
     backendAWSBucketName: 'terraform-backend-state-pradeep-azure'
     backendAWSKey: 'kubernetes-dev.tfstate'
+    
 # terraform init - backend
 # terraform apply
