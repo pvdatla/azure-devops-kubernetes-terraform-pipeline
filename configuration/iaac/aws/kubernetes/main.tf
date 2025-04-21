@@ -17,13 +17,13 @@ resource "aws_default_vpc" "default" {
 
 }
 
-data "aws_eks_cluster" "cluster" {
-   name = "in28minutes-cluster"
- }
+# data "aws_eks_cluster" "cluster" {
+#    name = module.in28minutes-cluster.cluster_name
+#  }
 
-data "aws_eks_cluster_auth" "cluster" {
-  name = "in28minutes-cluster"
-}
+# data "aws_eks_cluster_auth" "cluster" {
+#   name = module.in28minutes-cluster.cluster_name
+# }
 
 # data "aws_subnet_ids" "subnets" {
 #   vpc_id = aws_default_vpc.default.id
@@ -63,13 +63,13 @@ module "in28minutes-cluster" {
   }
 }
 
-# data "aws_eks_cluster" "cluster" {
-#   name = module.in28minutes-cluster.cluster_name
-# }
+data "aws_eks_cluster" "cluster" {
+  name = module.in28minutes-cluster.cluster_name
+}
 
-# data "aws_eks_cluster_auth" "cluster" {
-#   name = module.in28minutes-cluster.cluster_name
-# }
+data "aws_eks_cluster_auth" "cluster" {
+  name = module.in28minutes-cluster.cluster_name
+}
 
 
 # We will use ServiceAccount to connect to K8S Cluster in CI/CD mode
