@@ -17,11 +17,11 @@ resource "aws_default_vpc" "default" {
 
 }
 
-data "aws_eks_cluster" "example" {
+data "aws_eks_cluster" "cluster" {
    name = "in28minutes-cluster"
  }
 
-data "aws_eks_cluster_auth" "example" {
+data "aws_eks_cluster_auth" "cluster" {
   name = "in28minutes-cluster"
 }
 
