@@ -8,7 +8,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- task: TerraformTaskV3@3
+- task: TerraformTaskV2@2
   inputs:
     provider: 'aws'
     command: 'init'
