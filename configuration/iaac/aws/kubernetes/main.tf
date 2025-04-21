@@ -86,7 +86,7 @@ resource "kubernetes_cluster_role_binding" "example" {
   }
   subject {
     kind      = "User"
-    name      = "admin"
+    name      = "terraform-aws-user"
     api_group = "rbac.authorization.k8s.io"
   }
   subject {
