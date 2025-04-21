@@ -28,7 +28,6 @@ steps:
     provider: 'aws'
     command: 'validate'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
-    commandOptions: '-auto-approve -input=false -no-color -compact-warnings'
 
 # terraform apply
 
@@ -37,5 +36,4 @@ steps:
     provider: 'aws'
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
-    commandOptions: '-auto-approve -input=false -no-color -compact-warnings'
     environmentServiceNameAWS: 'aws-for-terraform'
